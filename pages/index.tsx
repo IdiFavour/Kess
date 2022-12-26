@@ -2,29 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Navbar from '../components/Navbar'
+import HeroBanner from '../components/HeroBanner'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const navLink: any = [
-    {
-        label: "Home",
-        link: "/"
-    },
-    {
-      label: "Services",
-      link: "/services"
-    },
-    {
-      label: "About",
-      link: "/about"
-    },
-    {
-      label: "Contact Us",
-      link: "/contact"
-    },
-  ]
+  
   return (
     <>
       <Head>
@@ -34,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <Navbar links={navLink}/>
+        <HeroBanner/>
       </>
     </>
   )
