@@ -9,12 +9,20 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const navLink: any = [
     {
-        label: "About",
+        label: "Home",
         link: "/"
     },
     {
-      label: "Features",
-      link: "/"
+      label: "Services",
+      link: "/services"
+    },
+    {
+      label: "About",
+      link: "/about"
+    },
+    {
+      label: "Contact Us",
+      link: "/contact"
     },
   ]
   return (
