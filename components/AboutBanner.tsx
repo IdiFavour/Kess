@@ -1,4 +1,12 @@
-import { createStyles, Text, SimpleGrid, Container } from "@mantine/core";
+import {
+  createStyles,
+  Text,
+  SimpleGrid,
+  Container,
+  ThemeIcon,
+  Center,
+  Title,
+} from "@mantine/core";
 import {
   IconTruck,
   IconCertificate,
@@ -58,14 +66,14 @@ function Feature({
 
   return (
     <div className={cx(classes.feature, className)} {...others}>
-      <div className={classes.overlay} />
-
       <div className={classes.content}>
-        <Icon size={38} className={classes.icon} stroke={1.5} />
+        <ThemeIcon variant="outline" size={60} radius={40}>
+          <Icon size={38} className={classes.icon} stroke={1.5} />
+        </ThemeIcon>
         <Text weight={700} size="lg" mb="xs" mt={5} className={classes.title}>
           {title}
         </Text>
-        <Text color="dimmed" size="sm">
+        <Text color="#495057" size="sm">
           {description}
         </Text>
       </div>
@@ -86,15 +94,13 @@ const mockdata = [
   },
   {
     icon: IconCoin,
-    title: "Very Affordable Pricing",
-    description:
-      "Thought to have gone extinct, Relicanth was given a name that is a variation of the name of the person who discovered.",
+    title: "Develop",
+    description: "Ideation, prototyping, costing of your project",
   },
   {
     icon: IconCoin,
-    title: "Very Affordable Pricing",
-    description:
-      "Thought to have gone extinct, Relicanth was given a name that is a variation of the name of the person who discovered.",
+    title: "Business Structure",
+    description: "Key parts of your business",
   },
 ];
 
@@ -102,10 +108,13 @@ const AboutBanner = () => {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
-    <Container mt={30} mb={30} size="lg">
+    <Container mt={50} mb={30} size="lg">
+      <Center>
+        <Title order={1}>The process we follow</Title>
+      </Center>
       <SimpleGrid
         cols={4}
-        breakpoints={[{ maxWidth: "sm", cols: 1 }]}
+        breakpoints={[{ maxWidth: "sm", cols: 2 }]}
         spacing={40}
       >
         {items}
