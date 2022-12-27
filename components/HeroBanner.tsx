@@ -68,30 +68,31 @@ const HeroBanner = () => {
     const { classes } = useStyles();
     return (
       <div>
-        <Container>
+        <Container size="lg">
           <div className={classes.inner}>
             <div className={classes.content}>
               <Title className={classes.title}>
-                A <span className={classes.highlight}>modern</span> React <br /> components library
+                <span className={classes.highlight}>Bimzhua</span> Multi-Global{" "}
+                <br /> Nigeria limited
               </Title>
               <Text color="dimmed" mt="md">
-                Build fully functional accessible web applications faster than ever – Mantine includes
-                more than 120 customizable components and hooks to cover you in any situation
+                Build fully functional accessible web applications faster than
+                ever – Mantine includes more than 120 customizable components
+                and hooks to cover you in any situation
               </Text>
-  
-              
-  
+
               <Group mt={30}>
-                <Button radius="xl" size="md" className={classes.control}>
-                  Get started
-                </Button>
-                <Button variant="default" radius="xl" size="md" className={classes.control}>
-                  Source code
+                <Button radius="md" size="md" className={classes.control}>
+                  Learn More
                 </Button>
               </Group>
             </div>
-            <Image className={classes.image}  src="https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg" alt="svg" />
-            
+            <Image
+              className={classes.image}
+              src="https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg"
+              alt="svg"
+              height={400}
+            />
           </div>
         </Container>
       </div>

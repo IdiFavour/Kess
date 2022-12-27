@@ -100,13 +100,18 @@ const Navbar = ({ links }: HeaderResponsiveProps) => {
 
   return (
     <Header height={HEADER_HEIGHT} mb={60} className={classes.root}>
-      <Container className={classes.header}>
+      <Container className={classes.header} size="lg">
         <MantineLogo size={28} />
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
 
-        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+        <Burger
+          opened={opened}
+          onClick={toggle}
+          className={classes.burger}
+          size="sm"
+        />
 
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
