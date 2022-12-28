@@ -15,6 +15,7 @@ import {
   IconCertificate,
   IconCoin,
   TablerIcon,
+  IconNotes,
 } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
@@ -97,7 +98,7 @@ function Feature({
 
 const mockdata = [
   {
-    icon: IconTruck,
+    icon: IconNotes,
     title: "Business Idea",
     description: "What you want your business to be",
   },
@@ -131,7 +132,7 @@ const Process = () => {
   const theme = useMantineTheme();
 
   return (
-    <Container mt={50} mb={30} size="lg">
+    <Container mt={50} mb={60} size="lg">
       <>
         <Title
           align="center"

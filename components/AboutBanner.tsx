@@ -1,101 +1,34 @@
 import {
-  createStyles,
-  Image,
   Container,
-  Title,
-  Button,
-  Group,
+  Grid,
+  SimpleGrid,
+  Skeleton,
+  useMantineTheme,
   Text,
-  List,
-  ThemeIcon,
+  Title,
 } from "@mantine/core";
-import { IconCheck } from "@tabler/icons";
-import HeroGrid from "./widgets/HeroGrid";
 import Process from "./Process";
-const useStyles = createStyles((theme) => ({
-  inner: {
-    display: "flex",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing.xl,
-    paddingBottom: theme.spacing.xl * 4,
-  },
 
-  content: {
-    maxWidth: 480,
-    marginLeft: theme.spacing.xl * 3,
-
-    [theme.fn.smallerThan("md")]: {
-      maxWidth: "100%",
-      marginLeft: 0,
-    },
-  },
-
-  title: {
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: 55,
-    lineHeight: 1.2,
-    fontWeight: 900,
-
-    [theme.fn.smallerThan("xs")]: {
-      fontSize: 28,
-    },
-  },
-
-  control: {
-    [theme.fn.smallerThan("xs")]: {
-      flex: 1,
-    },
-  },
-
-  image: {
-    flex: 1,
-  },
-
-  highlight: {
-    position: "relative",
-    backgroundColor: theme.fn.variant({
-      variant: "light",
-      color: theme.primaryColor,
-    }).background,
-    borderRadius: theme.radius.sm,
-    padding: "4px 12px",
-  },
-}));
+const PRIMARY_COL_HEIGHT = 300;
 
 const AboutBanner = () => {
-  const { classes } = useStyles();
-  return (
-    <div>
-      <Process />
-      <Container size="lg">
-        <div className={classes.inner}>
-          <Image
-            className={classes.image}
-            src="https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg"
-            alt="svg"
-            height={350}
-          />
-          <div className={classes.content}>
-            <Title className={classes.title}>
-              <span className={classes.highlight}>Bimzhua</span> Multi-Global{" "}
-              <br /> Nigeria limited
-            </Title>
-            <Text color="dimmed" mt="md">
-              Build fully functional accessible web applications faster than
-              ever – Mantine includes more than 120 customizable components and
-              hooks to cover you in any situation
-            </Text>
+  const theme = useMantineTheme();
+  const SECONDARY_COL_HEIGHT = PRIMARY_COL_HEIGHT / 2 - theme.spacing.md / 2;
 
-            <Group mt={30}>
-              <Button radius="md" size="md" className={classes.control}>
-                Learn More
-              </Button>
-            </Group>
-          </div>
-        </div>
-      </Container>
-    </div>
+  return (
+    <Container size="lg" mb={50}>
+      <Process />
+      <SimpleGrid
+        cols={2}
+        spacing="md"
+        breakpoints={[{ maxWidth: "sm", cols: 1 }]}
+      >
+        <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
+        <Grid gutter="md" m={20}>
+          <Title order={2}>About Us</Title>
+        </Grid>
+      </SimpleGrid>
+    </Container>
   );
 };
 export default AboutBanner;

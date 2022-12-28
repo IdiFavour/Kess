@@ -1,27 +1,24 @@
 import {
-    createStyles,
-    Image,
-    Container,
-    Title,
-    Button,
-    Group,
-    Text,
-    List,
-    ThemeIcon,
-  } from '@mantine/core';
-  import { IconCheck } from '@tabler/icons';
+  createStyles,
+  Image,
+  Container,
+  Title,
+  Button,
+  Group,
+  Text,
+  SimpleGrid,
+  ThemeIcon,
+} from "@mantine/core";
+import { IconCheck } from "@tabler/icons";
 import HeroGrid from "./widgets/HeroGrid";
 
 const useStyles = createStyles((theme) => ({
   inner: {
-    display: "flex",
-    justifyContent: "space-between",
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl * 4,
   },
 
   content: {
-    maxWidth: 480,
     marginRight: theme.spacing.xl * 3,
 
     [theme.fn.smallerThan("md")]: {
@@ -50,10 +47,6 @@ const useStyles = createStyles((theme) => ({
 
   image: {
     flex: 1,
-
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
-    },
   },
 
   highlight: {
@@ -73,26 +66,36 @@ const HeroBanner = () => {
     <div>
       <Container size="lg">
         <div className={classes.inner}>
-          <div className={classes.content}>
-            <Title className={classes.title}>
-              <span className={classes.highlight}>Bimzhua</span> Multi-Global{" "}
-              <br /> Nigeria limited
-            </Title>
-            <Text color="dimmed" mt="md">
-              Build fully functional accessible web applications faster than
-              ever – Mantine includes more than 120 customizable components and
-              hooks to cover you in any situation
-            </Text>
+          <SimpleGrid
+            cols={2}
+            spacing="lg"
+            breakpoints={[
+              { maxWidth: 980, cols: 3, spacing: "md" },
+              { maxWidth: 755, cols: 2, spacing: "sm" },
+              { maxWidth: 600, cols: 1, spacing: "sm" },
+            ]}
+          >
+            <div className={classes.content}>
+              <Title className={classes.title}>
+                <span className={classes.highlight}>Bimzhua</span> Multi-Global{" "}
+                <br /> Nigeria limited
+              </Title>
+              <Text color="dimmed" mt="md">
+                Build fully functional accessible web applications faster than
+                ever – Mantine includes more than 120 customizable components
+                and hooks to cover you in any situation
+              </Text>
 
-            <Group mt={30}>
-              <Button radius="md" size="md" className={classes.control}>
-                Learn More
-              </Button>
-            </Group>
-          </div>
-          <div className={classes.image}>
-            <HeroGrid />
-          </div>
+              <Group mt={30}>
+                <Button radius="md" size="md" className={classes.control}>
+                  Learn More
+                </Button>
+              </Group>
+            </div>
+            <div className={classes.image}>
+              <HeroGrid />
+            </div>
+          </SimpleGrid>
         </div>
       </Container>
     </div>
