@@ -50,10 +50,6 @@ const useStyles = createStyles((theme) => ({
 
   image: {
     flex: 1,
-
-    [theme.fn.smallerThan("md")]: {
-      display: "none",
-    },
   },
 
   highlight: {
