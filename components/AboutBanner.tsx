@@ -1,149 +1,105 @@
 import {
   createStyles,
-  Text,
-  SimpleGrid,
+  Image,
   Container,
-  ThemeIcon,
-  Center,
   Title,
+  Button,
+  Group,
+  Text,
+  List,
+  ThemeIcon,
 } from "@mantine/core";
-import {
-  IconTruck,
-  IconCertificate,
-  IconCoin,
-  TablerIcon,
-} from "@tabler/icons";
-
+import { IconCheck } from "@tabler/icons";
+import HeroGrid from "./widgets/HeroGrid";
+import Process from "./Process";
 const useStyles = createStyles((theme) => ({
-  feature: {
-    position: "relative",
+  inner: {
+    display: "flex",
+    justifyContent: "space-between",
     paddingTop: theme.spacing.xl,
-    paddingLeft: theme.spacing.xl,
-  },
-
-  overlay: {
-    position: "absolute",
-    height: 100,
-    width: 160,
-    top: 0,
-    left: 0,
-    backgroundColor: theme.fn.variant({
-      variant: "light",
-      color: theme.primaryColor,
-    }).background,
-    zIndex: 1,
+    paddingBottom: theme.spacing.xl * 4,
   },
 
   content: {
-    position: "relative",
-    zIndex: 2,
-  },
+    maxWidth: 480,
+    marginLeft: theme.spacing.xl * 3,
 
-  icon: {
-    color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-      .color,
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      marginLeft: 0,
+    },
   },
 
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
-  },
-  sectiontitle: {
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: 50,
-    fontWeight: 800,
+    fontSize: 55,
+    lineHeight: 1.2,
+    fontWeight: 900,
 
     [theme.fn.smallerThan("xs")]: {
       fontSize: 28,
     },
   },
+
+  control: {
+    [theme.fn.smallerThan("xs")]: {
+      flex: 1,
+    },
+  },
+
+  image: {
+    flex: 1,
+
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
+    },
+  },
+
+  highlight: {
+    position: "relative",
+    backgroundColor: theme.fn.variant({
+      variant: "light",
+      color: theme.primaryColor,
+    }).background,
+    borderRadius: theme.radius.sm,
+    padding: "4px 12px",
+  },
 }));
 
-interface FeatureProps extends React.ComponentPropsWithoutRef<"div"> {
-  icon: TablerIcon;
-  title: string;
-  description: string;
-}
-
-function Feature({
-  icon: Icon,
-  title,
-  description,
-  className,
-  ...others
-}: FeatureProps) {
-  const { classes, cx } = useStyles();
-
+const AboutBanner = () => {
+  const { classes } = useStyles();
   return (
-    <div className={cx(classes.feature, className)} {...others}>
-      <div className={classes.content}>
-        <ThemeIcon variant="outline" size={60} radius={40}>
-          <Icon size={38} className={classes.icon} stroke={1.5} />
-        </ThemeIcon>
-        <Text weight={700} size="lg" mb="xs" mt={5} className={classes.title}>
-          {title}
-        </Text>
-        <Text color="#495057" size="sm">
-          {description}
-        </Text>
-      </div>
+    <div>
+      <Process />
+      <Container size="lg">
+        <div className={classes.inner}>
+          <Image
+            className={classes.image}
+            src="https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg"
+            alt="svg"
+            height={350}
+          />
+          <div className={classes.content}>
+            <Title className={classes.title}>
+              <span className={classes.highlight}>Bimzhua</span> Multi-Global{" "}
+              <br /> Nigeria limited
+            </Title>
+            <Text color="dimmed" mt="md">
+              Build fully functional accessible web applications faster than
+              ever – Mantine includes more than 120 customizable components and
+              hooks to cover you in any situation
+            </Text>
+
+            <Group mt={30}>
+              <Button radius="md" size="md" className={classes.control}>
+                Learn More
+              </Button>
+            </Group>
+          </div>
+        </div>
+      </Container>
     </div>
   );
-}
-
-const mockdata = [
-  {
-    icon: IconTruck,
-    title: "Business Idea",
-    description: "What you want your business to be",
-  },
-  {
-    icon: IconCertificate,
-    title: "Planning",
-    description: "A business plan helps formalize your idea",
-  },
-  {
-    icon: IconCoin,
-    title: "Develop",
-    description: "Ideation, prototyping, costing of your project",
-  },
-  {
-    icon: IconCoin,
-    title: "Business Structure",
-    description: "Key parts of your business",
-  },
-];
-
-const AboutBanner = () => {
-  const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
-  const { classes, cx } = useStyles();
-  return (
-    <Container mt={50} mb={30} size="lg">
-      <>
-        <Title
-          align="center"
-          mb={10}
-          className={classes.sectiontitle}
-          order={1}
-        >
-          The process we follow
-        </Title>
-        <div>
-          <Text color="#495057" size="sm" fw={500} mb={20} align="center">
-            As a academy of business, we are going through <br /> the
-            development cycle.
-          </Text>
-        </div>
-      </>
-      <SimpleGrid
-        cols={4}
-        breakpoints={[{ maxWidth: "sm", cols: 2 }]}
-        spacing={40}
-      >
-        {items}
-      </SimpleGrid>
-    </Container>
-  );
 };
-
 export default AboutBanner;

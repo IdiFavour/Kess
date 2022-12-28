@@ -99,7 +99,7 @@ const Navbar = ({ links }: HeaderResponsiveProps) => {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} mb={60} className={classes.root}>
+    <Header height={HEADER_HEIGHT} mb={70} className={classes.root}>
       <Container className={classes.header} size="lg">
         <MantineLogo size={28} />
         <Group spacing={5} className={classes.links}>
