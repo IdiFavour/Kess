@@ -10,6 +10,7 @@ import {
   Stack,
   useMantineTheme,
 } from "@mantine/core";
+import { David_Libre } from "@next/font/google";
 import {
   IconTruck,
   IconCertificate,
@@ -36,6 +37,10 @@ const useStyles = createStyles((theme) => ({
       color: theme.primaryColor,
     }).background,
     zIndex: 1,
+  },
+  process: {
+    marginBottom: 100,
+    marginTop: 50,
   },
 
   content: {
@@ -132,7 +137,7 @@ const Process = () => {
   const theme = useMantineTheme();
 
   return (
-    <Container mt={50} mb={60} size="lg">
+    <div className={classes.process}>
       <>
         <Title
           align="center"
@@ -156,7 +161,7 @@ const Process = () => {
       >
         {items}
       </SimpleGrid>
-    </Container>
+    </div>
   );
 };
 
