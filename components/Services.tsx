@@ -1,6 +1,6 @@
 import {
   createStyles,
-  Badge,
+  Button,
   Group,
   Title,
   Text,
@@ -8,26 +8,29 @@ import {
   SimpleGrid,
   Container,
 } from "@mantine/core";
-import { IconGauge, IconUser, IconCookie } from "@tabler/icons";
+import {
+  IconGauge,
+  IconUser,
+  IconCookie,
+  IconArrowBadgeRight,
+  IconBrandTwitter,
+} from "@tabler/icons";
 
 const mockdata = [
   {
     title: "Extreme performance",
     description:
       "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
-    icon: IconGauge,
   },
   {
     title: "Privacy focused",
     description:
       "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma",
-    icon: IconUser,
   },
   {
     title: "No third parties",
     description:
       "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
-    icon: IconCookie,
   },
 ];
 
@@ -84,13 +87,15 @@ const Services = () => {
       className={classes.card}
       p="xl"
     >
-      <feature.icon size={50} stroke={2} color={theme.fn.primaryColor()} />
-      <Text size="lg" weight={500} className={classes.cardTitle} mt="md">
+      <Text size="lg" weight={500} className={classes.cardTitle}>
         {feature.title}
       </Text>
       <Text size="sm" color="dimmed" mt="sm">
         {feature.description}
       </Text>
+      <Button fullWidth rightIcon={<IconArrowBadgeRight size={20} />} mt={10}>
+        Get Started
+      </Button>
     </Card>
   ));
   return (
