@@ -47,6 +47,16 @@ const useStyles = createStyles((theme) => ({
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
+  sectiontitle: {
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: 50,
+    fontWeight: 800,
+
+    [theme.fn.smallerThan("xs")]: {
+      fontSize: 28,
+    },
+  },
 }));
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -106,12 +116,25 @@ const mockdata = [
 
 const AboutBanner = () => {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
-
+  const { classes, cx } = useStyles();
   return (
     <Container mt={50} mb={30} size="lg">
-      <Center>
-        <Title order={1}>The process we follow</Title>
-      </Center>
+      <>
+        <Title
+          align="center"
+          mb={10}
+          className={classes.sectiontitle}
+          order={1}
+        >
+          The process we follow
+        </Title>
+        <div>
+          <Text color="#495057" size="sm" fw={500} mb={20} align="center">
+            As a academy of business, we are going through <br /> the
+            development cycle.
+          </Text>
+        </div>
+      </>
       <SimpleGrid
         cols={4}
         breakpoints={[{ maxWidth: "sm", cols: 2 }]}
