@@ -12,8 +12,8 @@ import {
 } from "@mantine/core";
 import { David_Libre } from "@next/font/google";
 import {
-  IconTruck,
-  IconCertificate,
+  IconSettings,
+  IconClockHour3,
   IconCoin,
   TablerIcon,
   IconNotes,
@@ -87,8 +87,8 @@ function Feature({
   return (
     <div className={cx(classes.feature, className)} {...others}>
       <div className={classes.content}>
-        <ThemeIcon variant="outline" size={60} radius={40}>
-          <Icon size={38} className={classes.icon} stroke={1.5} />
+        <ThemeIcon variant="outline" size={50} radius={40}>
+          <Icon size={28} className={classes.icon} stroke={1.5} />
         </ThemeIcon>
         <Text weight={700} size="lg" mb="xs" mt={5} className={classes.title}>
           {title}
@@ -108,12 +108,12 @@ const mockdata = [
     description: "What you want your business to be",
   },
   {
-    icon: IconCertificate,
+    icon: IconClockHour3,
     title: "Planning",
     description: "A business plan helps formalize your idea",
   },
   {
-    icon: IconCoin,
+    icon: IconSettings,
     title: "Develop",
     description: "Ideation, prototyping, costing of your project",
   },

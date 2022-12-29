@@ -18,19 +18,49 @@ import {
 
 const mockdata = [
   {
-    title: "Extreme performance",
+    title: "Real Estate",
+    bg: "#feeeb6",
+    btnbg: "#fff",
     description:
-      "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
+      "Providing excellent housing accommodation in a well-planned and developed integrated community.",
   },
   {
-    title: "Privacy focused",
+    title: "Transportation",
+    bg: "#b4e0c5",
+    btnbg: "#fff",
+
     description:
       "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma",
   },
   {
-    title: "No third parties",
+    title: "IT Services",
+    bg: "#f8cbc3",
+    btnbg: "#fff",
+
     description:
       "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
+  },
+  {
+    title: "Agricultural Farming",
+    bg: "#f8cbc3",
+    btnbg: "#fff",
+    description:
+      "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
+  },
+  {
+    title: "Purchase of Machineries",
+    bg: "#feeeb6",
+    btnbg: "#fff",
+
+    description:
+      "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
+  },
+  {
+    title: "Construction Services",
+    bg: "#b4e0c5",
+    btnbg: "#fff",
+    description:
+      "Actively seek out the use of creative construction methods and materials for the delivery of affordable quality projects.",
   },
 ];
 
@@ -69,7 +99,7 @@ const useStyles = createStyles((theme) => ({
     "&::after": {
       content: '""',
       display: "block",
-      backgroundColor: theme.fn.primaryColor(),
+      backgroundColor: "#fff",
       width: 45,
       height: 2,
       marginTop: theme.spacing.sm,
@@ -86,14 +116,21 @@ const Services = () => {
       radius="md"
       className={classes.card}
       p="xl"
+      style={{ backgroundColor: feature.bg }}
     >
-      <Text size="lg" weight={500} className={classes.cardTitle}>
+      <Text size="lg" weight={600} className={classes.cardTitle}>
         {feature.title}
       </Text>
-      <Text size="sm" color="dimmed" mt="sm">
+      <Text size="sm" fw={400} color="#495057" mt="sm">
         {feature.description}
       </Text>
-      <Button fullWidth rightIcon={<IconArrowBadgeRight size={20} />} mt={10}>
+      <Button
+        fullWidth
+        style={{ backgroundColor: feature.btnbg }}
+        rightIcon={<IconArrowBadgeRight size={20} />}
+        mt={10}
+        c="dark"
+      >
         Get Started
       </Button>
     </Card>

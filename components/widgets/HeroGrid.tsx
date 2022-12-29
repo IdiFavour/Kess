@@ -16,15 +16,15 @@ const getSubHeight = (children: number, spacing: number) =>
 const HeroGrid = () => {
   const theme = useMantineTheme();
   return (
-    <Container my="md">
-      <SimpleGrid cols={2} breakpoints={[{ maxWidth: "xs", cols: 1 }]}>
+    <div>
+      <SimpleGrid my="md" cols={2} breakpoints={[{ maxWidth: "xs", cols: 1 }]}>
         {getChild(BASE_HEIGHT)}
         <Stack>
           {getChild(getSubHeight(2, theme.spacing.md))}
           {getChild(getSubHeight(2, theme.spacing.md))}
         </Stack>
       </SimpleGrid>
-    </Container>
+    </div>
   );
 };
 export default HeroGrid;
