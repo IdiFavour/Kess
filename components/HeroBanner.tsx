@@ -87,7 +87,14 @@ const HeroBanner = () => {
               </Text>
 
               <Group mt={30}>
-                <Button radius="md" size="md" className={classes.control}>
+                <Button
+                  className={classes.control}
+                  variant="white"
+                  radius="md"
+                  size="md"
+                  color="dark"
+                  style={{ backgroundColor: "#f8cbc3" }}
+                >
                   Learn More
                 </Button>
               </Group>
