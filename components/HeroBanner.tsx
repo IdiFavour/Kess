@@ -13,6 +13,9 @@ import { IconCheck } from "@tabler/icons";
 import HeroGrid from "./widgets/HeroGrid";
 
 const useStyles = createStyles((theme) => ({
+  cover: {
+    backgroundColor: "#feeeb6",
+  },
   inner: {
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl * 4,
@@ -63,8 +66,8 @@ const useStyles = createStyles((theme) => ({
 const HeroBanner = () => {
   const { classes } = useStyles();
   return (
-    <div>
-      <Container size="lg">
+    <div className={classes.cover}>
+      <Container size="lg" pt={70}>
         <div className={classes.inner}>
           <SimpleGrid
             cols={2}

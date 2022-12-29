@@ -10,7 +10,6 @@ import {
   Badge,
   Group,
 } from "@mantine/core";
-import image from "./image.svg";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
