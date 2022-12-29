@@ -86,7 +86,7 @@ const HeroBanner = () => {
                 <span className={classes.highlight}>Bimzhua</span> Multi-Global{" "}
                 <br /> Nigeria limited
               </Title>
-              <Text color="dimmed" mt="md">
+              <Text color="dimmed" fw={500} mt="md">
                 Build fully functional accessible web applications faster than
                 ever – Mantine includes more than 120 customizable components
                 and hooks to cover you in any situation
