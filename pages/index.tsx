@@ -5,10 +5,10 @@ import styles from '../styles/Home.module.css'
 import HeroBanner from '../components/HeroBanner'
 import AboutBanner from "../components/AboutBanner";
 import Services from "../components/Services";
-const inter = Inter({ subsets: ['latin'] })
+import Contact from "../components/Contact";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  
   return (
     <>
       <Head>
@@ -21,6 +21,7 @@ export default function Home() {
         <HeroBanner />
         <AboutBanner />
         <Services />
+        <Contact />
       </>
     </>
   );

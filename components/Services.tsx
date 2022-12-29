@@ -136,7 +136,7 @@ const Services = () => {
     </Card>
   ));
   return (
-    <Container size="lg" py="xl" mt={100}>
+    <Container size="lg" py="xl" mt={100} mb={100}>
       <Title order={2} className={classes.title} align="center" mt="sm">
         Services we provide
       </Title>
