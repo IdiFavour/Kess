@@ -6,9 +6,28 @@ import HeroBanner from '../components/HeroBanner'
 import AboutBanner from "../components/AboutBanner";
 import Services from "../components/Services";
 import Contact from "../components/Contact";
+import FooterBanner from "../components/FooterBanner";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const linkData = [
+    {
+      title: "About",
+      links: [{ label: "About BIMZHUA", link: "/" }],
+    },
+    {
+      title: "Contact Us",
+      links: [{ label: "Contact us via mail", link: "/contact" }],
+    },
+    {
+      title: "Community",
+      links: [
+        { label: "Follow on Twitter", link: "/" },
+        { label: "Follow on Instagram", link: "/" },
+      ],
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -22,6 +41,7 @@ export default function Home() {
         <AboutBanner />
         <Services />
         <Contact />
+        <FooterBanner data={linkData} />
       </>
     </>
   );
