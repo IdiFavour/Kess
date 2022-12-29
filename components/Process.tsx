@@ -49,8 +49,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   icon: {
-    color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-      .color,
+    color: theme.fn.variant({ variant: "light", color: theme.black }).color,
   },
 
   title: {
@@ -72,12 +71,14 @@ const useStyles = createStyles((theme) => ({
 interface FeatureProps extends React.ComponentPropsWithoutRef<"div"> {
   icon: TablerIcon;
   title: string;
+  iconcolor: any;
   description: string;
 }
 
 function Feature({
   icon: Icon,
   title,
+  iconcolor,
   description,
   className,
   ...others
@@ -85,10 +86,14 @@ function Feature({
   const { classes, cx } = useStyles();
 
   return (
-    <div className={cx(classes.feature, className)} {...others}>
+    <div
+      style={{ textAlign: "center" }}
+      className={cx(classes.feature, className)}
+      {...others}
+    >
       <div className={classes.content}>
-        <ThemeIcon variant="outline" size={50} radius={40}>
-          <Icon size={28} className={classes.icon} stroke={1.5} />
+        <ThemeIcon variant="filled" color={iconcolor} size={50} radius={40}>
+          <Icon size={28} color="#000" className={classes.icon} stroke={1.5} />
         </ThemeIcon>
         <Text weight={700} size="lg" mb="xs" mt={5} className={classes.title}>
           {title}
@@ -105,21 +110,25 @@ const mockdata = [
   {
     icon: IconNotes,
     title: "Business Idea",
+    iconcolor: "#b4e0c5",
     description: "What you want your business to be",
   },
   {
     icon: IconClockHour3,
     title: "Planning",
+    iconcolor: "#feeeb6",
     description: "A business plan helps formalize your idea",
   },
   {
     icon: IconSettings,
     title: "Develop",
+    iconcolor: "#f8cbc3",
     description: "Ideation, prototyping, costing of your project",
   },
   {
     icon: IconCoin,
     title: "Business Structure",
+    iconcolor: "#feeeb6",
     description: "Key parts of your business",
   },
 ];
