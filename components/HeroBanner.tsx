@@ -14,7 +14,10 @@ import HeroGrid from "./widgets/HeroGrid";
 
 const useStyles = createStyles((theme) => ({
   cover: {
-    backgroundColor: "#feeeb6",
+    background: "linear-gradient(to right, #feeeb6 70%, #000000 30%)",
+    [theme.fn.smallerThan("sm")]: {
+      background: "linear-gradient(to bottom, #feeeb6 70%, #000000 30%)",
+    },
   },
   inner: {
     paddingTop: theme.spacing.xl,

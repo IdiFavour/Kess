@@ -16,7 +16,7 @@ const AboutBanner = () => {
   const SECONDARY_COL_HEIGHT = PRIMARY_COL_HEIGHT / 2 - theme.spacing.md / 2;
 
   return (
-    <Container size="lg" mb={50}>
+    <Container size="lg" mb={50} mt={100}>
       <Process />
       <SimpleGrid
         cols={2}
