@@ -19,7 +19,12 @@ const HeroGrid = () => {
   return (
     <div>
       <SimpleGrid my="md" cols={2} breakpoints={[{ maxWidth: "xs", cols: 1 }]}>
-        <div>
+        <div
+          style={{
+            boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.65)",
+            borderRadius: "8px",
+          }}
+        >
           <Image
             src="https://media.istockphoto.com/id/1383117081/photo/happy-mature-couple-meeting-investments-and-financial-advisor-at-home.jpg?b=1&s=170667a&w=0&k=20&c=bYp670IfV0E5WayAKmNm3ydWoToaXrc76_T1u8fQvlo="
             alt="Norway"
@@ -28,7 +33,12 @@ const HeroGrid = () => {
           />
         </div>
         <Stack>
-          <div>
+          <div
+            style={{
+              boxShadow: "0px 0px 4px 0px rgba(253,253,253,0.65)",
+              borderRadius: "8px",
+            }}
+          >
             <Image
               src="https://media.istockphoto.com/id/1346006192/photo/portrait-of-a-contractor-filling-out-paperwork-at-a-construction-site.jpg?b=1&s=170667a&w=0&k=20&c=OD5xcLy4yzoTftL7m3NkM6kaJYuvSHlj3IHRR0cPl-g="
               alt="Norway"
@@ -36,7 +46,12 @@ const HeroGrid = () => {
               radius="md"
             />
           </div>
-          <div>
+          <div
+            style={{
+              boxShadow: "0px 0px 4px 0px rgba(253,253,253,0.65)",
+              borderRadius: "8px",
+            }}
+          >
             <Image
               src="https://images.unsplash.com/photo-1586206670130-4c6d8e646c9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHJhbnNwb3J0YXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
               alt="Norway"

@@ -9,6 +9,7 @@ const useStyles = createStyles((theme) => ({
   root: {
     position: "relative",
     zIndex: 1,
+    borderBottom: 0,
   },
 
   dropdown: {
