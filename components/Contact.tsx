@@ -17,7 +17,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: "center",
     padding: theme.spacing.xl * 2,
     borderRadius: theme.radius.md,
-    backgroundColor: theme.colors.dark,
+    backgroundColor: theme.colors.light,
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       flexDirection: "column-reverse",
       padding: theme.spacing.xl,
@@ -42,7 +42,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    color: theme.colorScheme === "light" ? theme.white : theme.black,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     lineHeight: 1,
     marginBottom: theme.spacing.md,
@@ -73,7 +73,14 @@ const useStyles = createStyles((theme) => ({
 const Contact = () => {
   const { classes } = useStyles();
   return (
-    <Container mb={100} style={{ backgroundColor: "dark" }}>
+    <Container
+      mb={100}
+      style={{
+        backgroundColor: "light",
+        border: "1px solid #000000",
+        borderRadius: "10px",
+      }}
+    >
       <div className={classes.wrapper}>
         <div className={classes.body}>
           <Title className={classes.title}>
@@ -86,9 +93,9 @@ const Contact = () => {
 
           <div className={classes.controls}>
             <Button
-              className={classes.control}
               variant="white"
               color="dark"
+              radius="sm"
               style={{ backgroundColor: "#f8cbc3" }}
             >
               Contact Us
