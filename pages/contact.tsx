@@ -125,7 +125,7 @@ const Contact = () => {
   ];
   return (
     <>
-      <Container mt={100}>
+      <Container mt={90}>
         <Paper shadow="md" radius="lg">
           <div className={classes.wrapper}>
             <div className={classes.contacts}>
@@ -177,7 +177,12 @@ const Contact = () => {
                 />
 
                 <Group position="right" mt="md">
-                  <Button type="submit" className={classes.control}>
+                  <Button
+                    type="submit"
+                    color="dark"
+                    style={{ backgroundColor: "#000" }}
+                    className={classes.control}
+                  >
                     Send message
                   </Button>
                 </Group>
