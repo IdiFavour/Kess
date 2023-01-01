@@ -148,7 +148,14 @@ const FooterBanner = ({ data }: FooterLinksProps) => {
         <div className={classes.logo}>
           <MantineLogo size={30} />
           <Text size="xs" color="dimmed" className={classes.description}>
-            Developed By
+            Developed By{" "}
+            <a
+              href="https://idifavour.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Idi Favour
+            </a>
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
