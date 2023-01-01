@@ -104,13 +104,22 @@ const Contact = () => {
             </Link>
           </div>
         </div>
-        <Card p="lg" radius="md">
+        <Card
+          p="lg"
+          radius="md"
+          style={{
+            boxShadow: "0px 0px 3px 0px rgba(0,0,0,0.65)",
+            borderRadius: "8px",
+          }}
+        >
           <Card.Section component="a">
-            <Image
-              src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGZlbWFsZSUyMG9mZmljZSUyMHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
-              height={360}
-              alt="Norway"
-            />
+            <div>
+              <Image
+                src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGZlbWFsZSUyMG9mZmljZSUyMHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+                height={360}
+                alt="Norway"
+              />
+            </div>
           </Card.Section>
         </Card>
       </div>
