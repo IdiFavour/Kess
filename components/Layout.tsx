@@ -6,11 +6,11 @@ const Layout = ({children}: any) => {
         label: "Home",
       },
       {
-        link: "/about",
+        link: "",
         label: "About",
       },
       {
-        link: "/services",
+        link: "",
         label: "Services",
       },
       {

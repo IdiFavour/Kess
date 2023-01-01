@@ -95,10 +95,10 @@ const Contact = () => {
             </Button>
           </div>
         </div>
-        <Card shadow="sm" p="lg" radius="md" withBorder>
-          <Card.Section component="a" href="https://mantine.dev/">
+        <Card p="lg" radius="md">
+          <Card.Section component="a">
             <Image
-              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+              src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGZlbWFsZSUyMG9mZmljZSUyMHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
               height={360}
               alt="Norway"
             />
