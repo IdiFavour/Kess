@@ -73,15 +73,15 @@ const useStyles = createStyles((theme) => ({
 const Contact = () => {
   const { classes } = useStyles();
   return (
-    <Container
-      mb={100}
-      style={{
-        backgroundColor: "light",
-        border: "1px solid #000000",
-        borderRadius: "10px",
-      }}
-    >
-      <div className={classes.wrapper}>
+    <Container mb={100}>
+      <div
+        className={classes.wrapper}
+        style={{
+          backgroundColor: "light",
+          border: "1px solid #000000",
+          borderRadius: "10px",
+        }}
+      >
         <div className={classes.body}>
           <Title className={classes.title}>
             Enough Talk, Let&apos;s Build Something
