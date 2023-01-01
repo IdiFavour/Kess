@@ -17,7 +17,10 @@ const useStyles = createStyles((theme) => ({
     marginTop: 120,
     paddingTop: theme.spacing.xl * 2,
     paddingBottom: theme.spacing.xl * 2,
-    backgroundColor: theme.colors.dark,
+    // backgroundColor: theme.colors.dark,
+    borderTop: `1px solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]
+    }`,
   },
 
   logo: {
@@ -82,7 +85,7 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 700,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     marginBottom: theme.spacing.xs / 2,
-    color: theme.colorScheme === "light" ? theme.white : theme.black,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
 
   afterFooter: {
@@ -140,8 +143,8 @@ const FooterBanner = ({ data }: FooterLinksProps) => {
   });
 
   return (
-    <footer className={classes.footer} style={{ backgroundColor: "dark" }}>
-      <Container className={classes.inner} style={{ backgroundColor: "dark" }}>
+    <footer className={classes.footer}>
+      <Container className={classes.inner}>
         <div className={classes.logo}>
           <MantineLogo size={30} />
           <Text size="xs" color="dimmed" className={classes.description}>

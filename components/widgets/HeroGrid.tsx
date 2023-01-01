@@ -35,7 +35,7 @@ const HeroGrid = () => {
         <Stack>
           <div
             style={{
-              boxShadow: "0px 0px 4px 0px rgba(253,253,253,0.65)",
+              boxShadow: "0px 0px 4px 0px rgba(0,0,0,0.65)",
               borderRadius: "8px",
             }}
           >
@@ -48,7 +48,7 @@ const HeroGrid = () => {
           </div>
           <div
             style={{
-              boxShadow: "0px 0px 4px 0px rgba(253,253,253,0.65)",
+              boxShadow: "0px 0px 4px 0px rgba(0,0,0,0.65)",
               borderRadius: "8px",
             }}
           >

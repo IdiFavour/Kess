@@ -10,7 +10,7 @@ import {
   Badge,
   Group,
 } from "@mantine/core";
-
+import Link from "next/link";
 const useStyles = createStyles((theme) => ({
   wrapper: {
     display: "flex",
@@ -92,14 +92,16 @@ const Contact = () => {
           </Text>
 
           <div className={classes.controls}>
-            <Button
-              variant="white"
-              color="dark"
-              radius="sm"
-              style={{ backgroundColor: "#f8cbc3" }}
-            >
-              Contact Us
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="white"
+                color="dark"
+                radius="sm"
+                style={{ backgroundColor: "#f8cbc3" }}
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
         <Card p="lg" radius="md">

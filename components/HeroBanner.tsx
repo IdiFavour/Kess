@@ -13,12 +13,12 @@ import { IconCheck } from "@tabler/icons";
 import HeroGrid from "./widgets/HeroGrid";
 
 const useStyles = createStyles((theme) => ({
-  cover: {
-    background: "linear-gradient(to right, #feeeb6 70%, #000000 30%)",
-    [theme.fn.smallerThan("sm")]: {
-      background: "linear-gradient(to bottom, #feeeb6 70%, #000000 30%)",
-    },
-  },
+  // cover: {
+  //   background: "linear-gradient(to right, #feeeb6 70%, #000000 30%)",
+  //   [theme.fn.smallerThan("sm")]: {
+  //     background: "linear-gradient(to bottom, #feeeb6 70%, #000000 30%)",
+  //   },
+  // },
   inner: {
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl * 4,
@@ -69,7 +69,7 @@ const useStyles = createStyles((theme) => ({
 const HeroBanner = () => {
   const { classes } = useStyles();
   return (
-    <div className={classes.cover}>
+    <div>
       <Container size="lg" pt={70}>
         <div className={classes.inner}>
           <SimpleGrid
