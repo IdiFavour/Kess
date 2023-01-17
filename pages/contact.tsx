@@ -129,18 +129,18 @@ const Contact = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
-        "YOUR SERVICE ID",
-        "YOUR TEMPLATE ID",
+        "service_sbwzpee",
+        "template_4rpps53",
         form.current,
-        "YOUR USER ID"
+        "ZqAojjSwAkFbZ1vCQ"
       )
       .then(
         (result) => console.log(result.text),
         (error) => console.log(error.text)
       );
+    e.target.reset();
   };
   return (
     <>
