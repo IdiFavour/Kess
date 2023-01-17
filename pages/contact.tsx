@@ -1,3 +1,5 @@
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 import {
   Paper,
   Text,
@@ -123,6 +125,23 @@ const Contact = () => {
       ],
     },
   ];
+  const form: any = useRef();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR SERVICE ID",
+        "YOUR TEMPLATE ID",
+        form.current,
+        "YOUR USER ID"
+      )
+      .then(
+        (result) => console.log(result.text),
+        (error) => console.log(error.text)
+      );
+  };
   return (
     <>
       <Container mt={90}>
@@ -141,10 +160,7 @@ const Contact = () => {
               {/* <ContactIconsList variant="white" /> */}
             </div>
 
-            <form
-              className={classes.form}
-              onSubmit={(event) => event.preventDefault()}
-            >
+            <form className={classes.form} ref={form} onSubmit={sendEmail}>
               <Text size="lg" weight={700} className={classes.title}>
                 Get in touch
               </Text>
@@ -154,26 +170,33 @@ const Contact = () => {
                   cols={2}
                   breakpoints={[{ maxWidth: "sm", cols: 1 }]}
                 >
-                  <TextInput label="Your name" placeholder="Your name" />
+                  <TextInput
+                    label="Your name"
+                    placeholder="Your name"
+                    name="user_name"
+                  />
                   <TextInput
                     label="Your email"
                     placeholder="johndoe@gmail.com"
                     required
+                    name="user_email"
                   />
                 </SimpleGrid>
 
-                <TextInput
+                {/* <TextInput
                   mt="md"
                   label="Subject"
                   placeholder="Subject"
                   required
-                />
+                /> */}
 
                 <Textarea
                   mt="md"
                   label="Your message"
                   placeholder="Please include all relevant information"
                   minRows={3}
+                  required
+                  name="message"
                 />
 
                 <Group position="right" mt="md">
@@ -182,6 +205,7 @@ const Contact = () => {
                     color="dark"
                     style={{ backgroundColor: "#000" }}
                     className={classes.control}
+                    value="Send"
                   >
                     Send message
                   </Button>
